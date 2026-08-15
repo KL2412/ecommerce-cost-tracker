@@ -1,0 +1,9 @@
+.git
+.env
+.idea
+.vscode
+node_modules
+public/build
+storage/logs/*
+vendor
+*.pdf
