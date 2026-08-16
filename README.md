@@ -17,9 +17,6 @@ Scramble is configured for interactive API testing at http://localhost:8000/docs
 Demo login: `demo@example.com` / `password`. Recent purchase and sale transactions are seeded automatically.
 
 ```bash
-# Run tests
-docker compose exec app php artisan test
-
 # Stop the application
 docker compose down
 ```
@@ -32,3 +29,7 @@ OpenAI Codex was used to:
 - Scaffold the Laravel project.
 - Create the Docker, Nginx, and PostgreSQL development setup.
 - Configure the local environment and database startup flow.
+- Implement JWT authentication and protected REST API routes.
+- Add automated tests for authentication, validation, costing, and seed data.
+- Configure Scramble OpenAPI documentation and interactive API testing.
+- Create dummy products, a demo user, and recent transaction seed data.
