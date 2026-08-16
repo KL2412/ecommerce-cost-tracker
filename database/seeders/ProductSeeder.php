@@ -25,6 +25,21 @@ class ProductSeeder extends Seeder
                 'name' => 'USB-C Hub',
                 'description' => 'Multi-port USB-C hub',
             ],
+            [
+                'sku' => 'LS-004',
+                'name' => 'Laptop Stand',
+                'description' => 'Adjustable aluminium laptop stand',
+            ],
+            [
+                'sku' => 'WC-005',
+                'name' => 'Webcam',
+                'description' => 'Full HD webcam with built-in microphone',
+            ],
+            [
+                'sku' => 'NCH-006',
+                'name' => 'Noise-Cancelling Headphones',
+                'description' => 'Wireless over-ear headphones',
+            ],
         ];
 
         foreach ($products as $product) {

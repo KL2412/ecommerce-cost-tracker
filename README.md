@@ -14,6 +14,8 @@ The application will be available at http://localhost:8000. The first startup in
 
 Scramble is configured for interactive API testing at http://localhost:8000/docs/api. The generated OpenAPI specification is available at http://localhost:8000/docs/api.json.
 
+Demo login: `demo@example.com` / `password`. Recent purchase and sale transactions are seeded automatically.
+
 ```bash
 # Run tests
 docker compose exec app php artisan test
