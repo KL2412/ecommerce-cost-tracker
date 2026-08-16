@@ -16,4 +16,18 @@ class ProductRepository
             ->orderBy('id')
             ->get();
     }
+
+    public function findAndLock(int $id): Product
+    {
+        return Product::query()
+            ->lockForUpdate()
+            ->findOrFail($id);
+    }
+
+    public function save(Product $product): Product
+    {
+        $product->save();
+
+        return $product;
+    }
 }

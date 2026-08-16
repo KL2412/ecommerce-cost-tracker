@@ -9,6 +9,7 @@ services:
       sh -c "if [ ! -f .env ]; then cp .env.example .env; fi
       && composer install --no-interaction --prefer-dist
       && if ! grep -q '^APP_KEY=base64:' .env; then php artisan key:generate --force; fi
+      && if ! grep -q '^JWT_SECRET=.' .env; then php artisan jwt:secret --force; fi
       && php artisan migrate --force
       && php artisan db:seed --force
       && chown -R www-data:www-data storage bootstrap/cache

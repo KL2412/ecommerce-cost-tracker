@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\InventoryTransactionType;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -20,6 +21,7 @@ class InventoryTransaction extends Model
     protected function casts(): array
     {
         return [
+            'type' => InventoryTransactionType::class,
             'transaction_date' => 'date',
             'quantity' => 'integer',
             'unit_cost' => 'decimal:2',

@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\User;
 use Database\Seeders\ProductSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -12,6 +13,7 @@ class ProductIndexTest extends TestCase
 
     public function test_products_can_be_retrieved(): void
     {
+        $this->actingAs(User::factory()->create(), 'api');
         $this->seed(ProductSeeder::class);
         $this->seed(ProductSeeder::class);
 
