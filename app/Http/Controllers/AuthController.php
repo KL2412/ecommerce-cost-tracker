@@ -12,6 +12,9 @@ class AuthController extends Controller
 {
     public function __construct(private readonly AuthService $authService) {}
 
+    /**
+     * Register a user.
+     */
     public function register(RegisterRequest $request): JsonResponse
     {
         $user = $this->authService->register($request->safe()->only([
@@ -29,6 +32,9 @@ class AuthController extends Controller
         ], Response::HTTP_CREATED);
     }
 
+    /**
+     * Log in and issue a JWT.
+     */
     public function login(LoginRequest $request): JsonResponse
     {
         $token = $this->authService->attempt($request->validated());

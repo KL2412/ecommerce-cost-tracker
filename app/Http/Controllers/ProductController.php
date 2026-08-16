@@ -10,6 +10,9 @@ class ProductController extends Controller
 {
     public function __construct(private readonly ProductService $productService) {}
 
+    /**
+     * List products and current inventory balances.
+     */
     public function index(): AnonymousResourceCollection
     {
         return ProductResource::collection($this->productService->getAll());

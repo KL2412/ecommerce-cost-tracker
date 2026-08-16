@@ -12,6 +12,8 @@ docker compose up --build -d
 
 The application will be available at http://localhost:8000. The first startup installs Composer dependencies, creates `.env`, generates the application key, and runs database migrations automatically.
 
+Scramble is configured for interactive API testing at http://localhost:8000/docs/api. The generated OpenAPI specification is available at http://localhost:8000/docs/api.json.
+
 ```bash
 # Run tests
 docker compose exec app php artisan test

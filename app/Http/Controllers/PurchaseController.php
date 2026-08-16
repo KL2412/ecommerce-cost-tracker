@@ -13,11 +13,17 @@ class PurchaseController extends Controller
 {
     public function __construct(private readonly InventoryTransactionService $transactionService) {}
 
+    /**
+     * List purchase transactions.
+     */
     public function index(): AnonymousResourceCollection
     {
         return InventoryTransactionResource::collection($this->transactionService->purchases());
     }
 
+    /**
+     * Record a purchase transaction.
+     */
     public function store(StorePurchaseRequest $request): JsonResponse
     {
         $transaction = $this->transactionService->recordPurchase(

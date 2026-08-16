@@ -13,11 +13,17 @@ class SaleController extends Controller
 {
     public function __construct(private readonly InventoryTransactionService $transactionService) {}
 
+    /**
+     * List sale transactions with costing information.
+     */
     public function index(): AnonymousResourceCollection
     {
         return InventoryTransactionResource::collection($this->transactionService->sales());
     }
 
+    /**
+     * Record a sale using the product's weighted average cost.
+     */
     public function store(StoreSaleRequest $request): JsonResponse
     {
         $transaction = $this->transactionService->recordSale(
